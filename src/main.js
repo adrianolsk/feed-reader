@@ -77,12 +77,14 @@ var normalize = ({link, title, pubDate, author, contentSnippet, content}) => {
 
   if (content && isString(content)) {
     content = Entity.decode(content);
+  }else{
+      content = "";
   }
 
   if (contentSnippet && isString(contentSnippet)) {
     contentSnippet = Entity.decode(contentSnippet);
     contentSnippet = bella.stripTags(contentSnippet);
-  } else if (content && isString(content)) {
+  } else {
     contentSnippet = bella.stripTags(content);
   }
 
