@@ -26,6 +26,7 @@
     "bellajs": "6.x.x",
     "friendly-xml": "1.x.x",
     "html-entities": "1.x.x",
+    "moment": "^2.18.1",
     "node-fetch": "1.x.x",
     "promise-wtf": "1.x.x",
     "xml2json": "0.x.x"

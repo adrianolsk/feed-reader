@@ -3,6 +3,7 @@
  * @ndaidong
  **/
 
+var moment = require('moment');
 var bella = require('bellajs');
 var Promise = require('promise-wtf');
 var parser = require('xml2json');
@@ -58,9 +59,9 @@ var normalize = ({link, title, pubDate, author, contentSnippet, content}) => {
   let publishedDate;
 
   try {
-    let date = bella.date(pubDate);
+    let date = moment(pubDate);
     if (date) {
-      publishedDate = date.utc();
+      publishedDate = date.utc().toDate();
     }
   } catch (e) {
     return false;
@@ -77,8 +78,8 @@ var normalize = ({link, title, pubDate, author, contentSnippet, content}) => {
 
   if (content && isString(content)) {
     content = Entity.decode(content);
-  }else{
-      content = "";
+  }else {
+      content = '';
   }
 
   if (contentSnippet && isString(contentSnippet)) {
