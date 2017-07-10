@@ -74,6 +74,10 @@ var normalize = ({link, title, pubDate, author, contentSnippet, content}) => {
   if (author && isString(author)) {
     author = Entity.decode(author);
     author = bella.ucwords(author);
+  }else{
+      if (isObject(author)) {
+          author = '';
+      }
   }
 
   if (content && isString(content)) {
