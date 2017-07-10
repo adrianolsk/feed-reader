@@ -175,6 +175,9 @@ var toATOM = (res) => {
       let author = item.author || '';
       if (isObject(author) && author.name) {
         author = author.name;
+          if (isObject(author)) {
+              author = '';
+          }
       }
 
       let content = item.content || contentSnippet || '';
